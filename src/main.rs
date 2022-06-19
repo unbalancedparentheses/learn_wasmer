@@ -25,7 +25,6 @@ fn main() -> anyhow::Result<()> {
             (call $factorial_native (local.get $num))
             get_local $add_number
             i32.add)
-
         ;; export factorial_add wasm function to rust
         (export "factorial_add" (func $factorial_add)))
     "#;
