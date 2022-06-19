@@ -71,14 +71,14 @@ fn main() -> anyhow::Result<()> {
     assert_eq!(result_native, 4);
     println!("Result native: {:?}", result_native);
 
-    // The wasm module exports a function called `factorial_add`. Let's get it.
+    // the wasm module exports a function called `factorial_add`. Let's get it.
     let factorial_add = instance
         .exports
         .get_function("factorial_add")?
         .native::<(i32, i32), i32>()?;
 
     println!("Calling `factorial_add` function...");
-    // Let's call the `factorial_add` exported function. It will call each
+    // let's call the `factorial_add` exported function. It will call each
     // of the imported functions.
     let result = factorial_add.call(3, 2)?;
 
