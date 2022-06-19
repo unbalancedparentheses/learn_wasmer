@@ -42,7 +42,7 @@ fn main() -> anyhow::Result<()> {
     }
     let factorial_native = Function::new_native(&store, factorial);
 
-    // Create an import object.
+    // create an import object.
     let import_object = imports! {
         "env" => {
             "factorial_native" => factorial_native,
