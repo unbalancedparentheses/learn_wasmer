@@ -33,9 +33,8 @@ fn main() -> anyhow::Result<()> {
     let store = Store::default();
     let module = Module::new(&store, &module_wat)?;
 
-    // Create the functions
+    // create the factorial function that will be called from wasm
     fn factorial(num: i32) -> i32 {
-    println!("Calling `multiply_native`...");
         match num {
             0 | 1 => 1,
             _ => factorial(num - 1) * num,
