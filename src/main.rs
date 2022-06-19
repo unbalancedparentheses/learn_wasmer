@@ -73,7 +73,7 @@ fn main() -> anyhow::Result<()> {
     assert_eq!(result_native, 4);
     println!("Result native: {:?}", result_native);
 
-    // The Wasm module exports a function called `sum`. Let's get it.
+    // The wasm module exports a function called `factorial_add`. Let's get it.
     let factorial_add = instance
         .exports
         .get_function("factorial_add")?
@@ -84,7 +84,7 @@ fn main() -> anyhow::Result<()> {
     // of the imported functions.
     let result = factorial_add.call(3, 2)?;
 
-    println!("Results of `sum`: {:?}", result);
+    println!("Results of `factorial_add`: {:?}", result);
     assert_eq!(result, 8);
 
     Ok(())
